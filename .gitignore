@@ -1,3 +1,6 @@
+# VSCode workspace files
+.vscode/
+
 # Prerequisites
 *.d
 
