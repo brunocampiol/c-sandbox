@@ -4,7 +4,7 @@
 #include <time.h>
 #include <unistd.h>
 
-clock_t start;
+clock_t clock_start;
 
 bool IsPrime(unsigned long long int n)
 {
@@ -26,7 +26,7 @@ bool IsPrime(unsigned long long int n)
 int main()
 {
     printf("Starting to find prime numbers\n");
-    start = clock();
+    clock_start = clock();
 
     // 18,446,744,073,709,551,615 - 50,000,000,000,000,000,000
     // 50000000000000000000 => 0xB1A2BC2EC50000ull
@@ -36,8 +36,8 @@ int main()
     {
         if (IsPrime(i))
         {
-            clock_t end = clock();
-            double elapsed = (double)(end - start) / (double)CLOCKS_PER_SEC;
+            clock_t clock_end = clock();
+            double elapsed = (double)(clock_end - clock_start) / (double)CLOCKS_PER_SEC;
             printf("%llu is prime - Elapsed time %.2f\n", i, elapsed);
             // sleep(1);
         }
